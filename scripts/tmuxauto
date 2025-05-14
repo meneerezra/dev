@@ -1,0 +1,18 @@
+#!/bin/bash
+
+session=$1
+path=$2
+echo $path
+tmux new-session -d -s $session
+tmux rename-window -t 1 'Main'
+tmux send-keys -t 'Main' 'cd ' $path C-m
+tmux send-keys -t 'Main' 'clear' C-m
+
+tmux new-window -t $session:2 -n 'Lazygit'
+tmux send-keys -t 'Lazygit' 'cd '$path C-m
+tmux send-keys -t 'Lazygit' 'lazygit' C-m
+tmux send-keys -t 'Lazygit' 'clear' C-m
+
+tmux new-window -t $session:3 -n 'Shell'
+tmux send-keys -t 'Shell' 'cd ' $path C-m
+tmux send-keys -t 'Shell' 'fish' C-m 'clear' C-m
