@@ -11,6 +11,9 @@ end
 
 function fish_greeting
 
+alias vim=nvim
+alias vi=nvim
+
 end 
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 abbr mkdir 'mkdir -p'

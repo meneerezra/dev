@@ -84,7 +84,6 @@ vim.opt.confirm = true
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("i", "jj", "<Esc>")
-vim.keymap.set("i", "kk", "<Esc>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
@@ -368,9 +367,9 @@ require("lazy").setup({
 			end, { desc = "[S]earch [/] in Open Files" })
 
 			-- Shortcut for searching your Neovim configuration files
-			vim.keymap.set("n", "<leader>sn", function()
-				builtin.find_files({ cwd = vim.fn.stdpath("config") })
-			end, { desc = "[S]earch [N]eovim files" })
+			-- vim.keymap.set("n", "<leader>sn", function()
+			-- 	builtin.find_files({ cwd = vim.fn.stdpath("config") })
+			-- end, { desc = "[S]earch [N]eovim files" })
 		end,
 	},
 
@@ -727,13 +726,17 @@ require("lazy").setup({
 					--    See the README about individual language/framework/plugin snippets:
 					--    https://github.com/rafamadriz/friendly-snippets
 					-- {
-					--   'rafamadriz/friendly-snippets',
-					--   config = function()
-					--     require('luasnip.loaders.from_vscode').lazy_load()
-					--   end,
+					-- 	"rafamadriz/friendly-snippets",
+					-- 	config = function()
+					-- 		require("luasnip.loaders.from_vscode").lazy_load()
+					-- 	end,
 					-- },
 				},
-				opts = {},
+				opts = {
+					load = function()
+						require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets" })
+					end,
+				},
 			},
 			"folke/lazydev.nvim",
 		},
@@ -802,7 +805,6 @@ require("lazy").setup({
 			signature = { enabled = true },
 		},
 	},
-
 	{
 		"catppuccin/nvim", -- Corrected plugin name
 		priority = 1000,
