@@ -10,11 +10,10 @@ function fish_user_key_bindings
 end
 
 function fish_greeting
-
+end
 alias vim=nvim
 alias vi=nvim
 
-end 
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 abbr mkdir 'mkdir -p'
 set -U fish_user_paths /Users/ezraschutte/Library/Python/3.9/bin $fish_user_paths

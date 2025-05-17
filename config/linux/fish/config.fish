@@ -13,6 +13,8 @@ abbr mkdir 'mkdir -p'
 #     source ~/.cache/wal/colors.sh
 # end
 set -U fish_user_paths ~/dev/scripts/ $fish_user_paths
+set -U fish_user_paths $HOME/go/bin $fish_user_paths
 
-set -x TMUX_PYWAL_BG $background
-set -x TMUX_PYWAL_FG $foreground
+alias vim=nvim
+alias vi=nvim
+
