@@ -30,5 +30,11 @@ do
     rm -r "$configDir/$baseDir"
     cp -R "$dir" "$configDir/$baseDir"
     echo "Copied $baseDir"
-    hyprctl reload
 done
+
+if [ $os == "linux" ]
+then
+    echo "Hyprland reloaded"
+    hyprctl reload
+fi
+
