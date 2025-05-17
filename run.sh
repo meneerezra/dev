@@ -3,11 +3,11 @@ os="NULL"
 configDir="$HOME/.config"
 if [ -z $1 ]
 then
-    echo "Provide an argument (linux/mac)"
+    echo "Provide an argument (linux/mac/global)"
     exit 1
-elif [ $1 != "mac" ] && [ $1 != "linux" ];
+elif [ $1 != "mac" ] && [ $1 != "linux" ] && [ $1 != "global" ];
 then
-    echo "Invalid os/argument (linux/mac)"
+    echo "Invalid os/argument (linux/mac/global)"
     exit 1
 fi
 os=$1
@@ -22,6 +22,11 @@ do
     cp -R "$dir" "$configDir/$baseDir"
     echo "Copied $baseDir"
 done
+
+if [ $os == "global " ]
+then
+    exit 1
+fi
 
 for dir in ./config/$os/*/
 do
