@@ -17,5 +17,5 @@ then
     brew install nvim tldr fzf tmux kitty yabai skhd fish
 elif [ $os == "linux" ];
 then
-    sudo pacman -S nvim fzf tldr swww hypr waybar tmux fish python-pywal
+    sudo pacman -S nvim fzf tldr swww hyprland waybar tmux fish python-pywal
 fi
