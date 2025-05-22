@@ -156,6 +156,13 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+
+	-- Import plugins from other files
+	require("custom.plugins.autopairs"),
+	require("custom.plugins.liveserver"),
+	require("custom.plugins.ts-autotag"),
+	require("custom.plugins.harpoon"),
+
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
 	"ThePrimeagen/vim-be-good",
@@ -915,9 +922,6 @@ require("lazy").setup({
 	-- require 'kickstart.plugins.debug',
 	-- require 'kickstart.plugins.indent_line',
 	-- require 'kickstart.plugins.lint',
-	require("kickstart.plugins.autopairs"),
-	require("kickstart.plugins.liveserver"),
-	require("kickstart.plugins.ts-autotag"),
 	-- require 'kickstart.plugins.neo-tree',
 	-- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
