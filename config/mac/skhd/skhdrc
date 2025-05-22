@@ -136,3 +136,7 @@ ctrl - return : open -a "kitty" -n
 
 # Quickly restart yabai
 ctrl + alt + cmd - r : yabai --restart-service
+
+
+# Unbind cmd + h and rebind it to ctrl+h
+cmd - h : send_text all \x08
