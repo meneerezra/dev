@@ -17,3 +17,6 @@ alias vi=nvim
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 abbr mkdir 'mkdir -p'
 set -U fish_user_paths /Users/ezraschutte/Library/Python/3.9/bin $fish_user_paths
+set -U fish_user_paths ~/dev/scripts $fish_user_paths
+set -U fish_user_paths /Users/ezraschutte/go/bin $fish_user_paths
+
